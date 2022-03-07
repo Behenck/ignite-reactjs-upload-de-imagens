@@ -1,15 +1,29 @@
-import { Button, Box } from '@chakra-ui/react';
 import { useMemo } from 'react';
+import { Button, Box } from '@chakra-ui/react';
 import { useInfiniteQuery } from 'react-query';
 
-import { Header } from '../components/Header';
-import { CardList } from '../components/CardList';
 import { api } from '../services/api';
-import { Loading } from '../components/Loading';
+
 import { Error } from '../components/Error';
+import { Header } from '../components/Header';
+import { Loading } from '../components/Loading';
+import { CardList } from '../components/CardList';
+
+interface Image {
+  title: string;
+  description: string;
+  url: string;
+  ts: number;
+  id: string;
+}
+
+interface ImagesResponse {
+  after: string;
+  data: Image[];
+}
 
 export default function Home(): JSX.Element {
-  async function fetchImages({ pageParam = null }): Promise<any> {
+  async function fetchImages({ pageParam = null }): Promise<ImagesResponse> {
     const { data } = await api('/api/images', {
       params: {
         after: pageParam,
@@ -49,7 +63,6 @@ export default function Home(): JSX.Element {
   return (
     <>
       <Header />
-
       <Box maxW={1120} px={20} mx="auto" my={20}>
         <CardList cards={formattedData} />
         {hasNextPage && (

@@ -29,7 +29,6 @@ export function CardList({ cards }: CardsProps): JSX.Element {
     <>
       <SimpleGrid columns={[1, 2, 3]} spacing={40}>
         {cards.map(card => (
-          // eslint-disable-next-line react/jsx-no-bind
           <Card key={card.id} data={card} viewImage={handleViewImage} />
         ))}
       </SimpleGrid>

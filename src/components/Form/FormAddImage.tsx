@@ -123,7 +123,6 @@ export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
           error={errors.description}
         />
       </Stack>
-
       <Button
         my={6}
         isLoading={formState.isSubmitting}
