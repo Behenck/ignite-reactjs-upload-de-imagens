@@ -18,7 +18,7 @@ Criar um banco no [FaunaDB](https://docs.fauna.com/fauna/current/learn/quick_sta
 com um nome de sua preferência que **precisa** ter uma coleção chamada `images`. Com o banco e coleção criados, basta você criar e copiar a chave do banco no seu arquivo `.env.local` da seguinte forma: `FAUNA_API_KEY=VALOR_DA_CHAVE_COPIADA`
 
     # Clone o repositório em sua máquina
-    $ git@github.com:kaiquezimerer/ignite-reactjs-upload-de-imagens.git
+    $ git clone git@github.com:kaiquezimerer/ignite-reactjs-upload-de-imagens.git
     
     # Acesse a pasta do projeto pelo terminal/cmd
     $ cd ignite-reactjs-upload-de-imagens/
